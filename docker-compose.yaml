@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  website:
+    build: .
+    networks:
+      - web-proxy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.website.rule=Host(`your-domain.com`)"
+      - "traefik.http.routers.website.entrypoints=web"
+
+networks:
+  web-proxy:
+    external: true
