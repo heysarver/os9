@@ -1,15 +1,8 @@
 version: '3'
 
 services:
-  website:
+  os9:
     build: .
-    networks:
-      - web-proxy
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.website.rule=Host(`your-domain.com`)"
-      - "traefik.http.routers.website.entrypoints=web"
-
-networks:
-  web-proxy:
-    external: true
+    container_name: os9
+    ports:
+      - 8080:80
