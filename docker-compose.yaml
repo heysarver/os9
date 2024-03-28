@@ -1,10 +1,10 @@
-version: '3'
+version: "3"
 
 services:
   os9:
     build: .
     container_name: os9
     ports:
-      - 8080:80
+      - 1059:80
     volumes:
       - ./:/usr/local/apache2/htdocs/
